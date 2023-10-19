@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asma'ul Husna - Mosque</title>
+
+    <link rel="shortcut icon" href="Image/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="head-kiri">
+            <div class="images">
+                <img src="Image/logo.png" alt="" class="logo">
+                <p class="brand">Mosque</p>
+            </div>
+            <i class='bx bx-star' id="menuIcon"></i>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="asmaulHusna.html">Asma'ul Husna</a>
+            <a href="alquran.html">Al-Qur'an</a>
+        </nav>
+    </header>
+
+    <section id="asmaul-husna">
+        <h1 class="title">Asma'ul Husna</h1>
+        <div id="asmaaa"></div>
+    </section>
+
+    <script>
+window.onload = function() {
+    getAsmaData()
+}
+
+function getAsmaData() {
+    fetch("https://api.aladhan.com/v1/asmaAlHusna")
+    .then(function(asmaResponse) {
+        if(!asmaResponse.ok) {
+            throw new Error("Gagal mengambil data")
+        }
+        return asmaResponse.json()
+    })
+    .then(function(asmaData) {
+        displayData(asmaData)
+    })
+    .catch(function(asmaError) {
+        console.log("Terjadi kesalahan", asmaError);
+    })
+}
+
+function displayData(asmaData) {
+    var asmaulHusnaDiv = document.getElementById("asmaaa");
+    asmaulHusnaDiv.innerHTML = ' ';
+
+    asmaData.data.forEach(function(asmaList) {
+        var asmaulHusnaChildDiv = document.createElement("div");
+        asmaulHusnaChildDiv.classList.add("div-asma");
+
+        var namaAsmaulHusna = document.createElement("h3");
+        namaAsmaulHusna.textContent = asmaList.transliteration + " (" + asmaList.name + ")";
+        namaAsmaulHusna.classList.add("nama-judul");
+
+        var artiAsmaulHusna = document.createElement("p");
+        artiAsmaulHusna.textContent = asmaList.en.meaning;
+        artiAsmaulHusna.classList.add("keterangan-arti")
+
+        asmaulHusnaChildDiv.appendChild(namaAsmaulHusna);
+        asmaulHusnaChildDiv.appendChild(artiAsmaulHusna);
+
+        asmaulHusnaDiv.appendChild(asmaulHusnaChildDiv);
+    })
+}
+
+    let menuIcon = document.querySelector('#menuIcon')
+    let navbar = document.querySelector('.navbar')
+    
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('bx-x')
+        navbar.classList.toggle('active')
+    }
+    </script>
+</body>
+</html>

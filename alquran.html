@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al - Qur'an - Mosque</title>
+    
+    <link rel="shortcut icon" href="Image/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="head-kiri">
+            <div class="images">
+                <img src="Image/logo.png" alt="" class="logo">
+                <p class="brand">Mosque</p>
+            </div>
+            <i class='bx bx-food-menu' id="menuIcon"></i>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="asmaulHusna.html">Asma'ul Husna</a>
+            <a href="alquran.html">Al-Qur'an</a>
+        </nav>
+    </header>
+
+    <section id="surah-quran">
+        <h1 class="title">Al-Qur'an List</h1>
+        <div id="surah"></div>
+    </section>
+
+
+    <script>
+        window.onload = function() {
+    getQuranData();
+}
+
+function getQuranData() {
+    fetch("https://api.banghasan.com/quran/format/json/surat",)
+    .then(function(quranResponse) {
+        if(!quranResponse.ok) {
+            throw new Error("Gagal mengambil data");
+        }
+        return quranResponse.json()
+    })
+    .then(function(quranData) {
+        displayData(quranData);
+        // console.log(data);
+    })
+    .catch(function(error) {
+        console.log("Terjadi kesalahan", error);
+    })
+}
+function displayData(quranData) {
+    var suratAlquranDiv = document.getElementById("surah");
+    suratAlquranDiv.innerHTML = ' ';
+
+    quranData.hasil.forEach(function(suratList) {
+        var suratAlquranChildDiv = document.createElement("div");
+        suratAlquranChildDiv.classList.add("div-quran");
+
+        var nameeeSurat = document.createElement("h3");
+        nameeeSurat.textContent = suratList.nama + " (" + suratList.asma + ")";
+        nameeeSurat.classList.add("nama-judul");
+
+        var artiSurat = document.createElement("p");
+        artiSurat.textContent = suratList.arti;
+        artiSurat.classList.add("keterangan-arti")
+
+        var tipeSurat = document.createElement("p");
+        tipeSurat.textContent = "Diturunkan di "+ suratList.type;
+        tipeSurat.classList.add("keterangan-arti")
+
+        suratAlquranChildDiv.appendChild(nameeeSurat);
+        suratAlquranChildDiv.appendChild(artiSurat);
+        suratAlquranChildDiv.appendChild(tipeSurat);
+
+        suratAlquranDiv.appendChild(suratAlquranChildDiv);
+    })
+}
+
+let menuIcon = document.querySelector('#menuIcon')
+    let navbar = document.querySelector('.navbar')
+    
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('bx-x')
+        navbar.classList.toggle('active')
+    }
+    </script>
+</body>
+</html>

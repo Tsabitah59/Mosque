@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosque</title>
+
+    <link rel="shortcut icon" href="Image/logo.png" type="image/x-icon">      
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="head-kiri">
+            <div class="images">
+                <img src="Image/logo.png" alt="" class="logo">
+                <p class="brand">Mosque</p>
+            </div>
+            <i class='bx bx-home' id="menuIcon"></i>
+        </div>
+
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="asmaulHusna.html">Asma'ul Husna</a>
+            <a href="alquran.html">Al-Qur'an</a>
+        </nav>
+    </header>
+
+    <section id="landing">
+        <div class="kiri">
+            <h6 id="tanggal"></h6>
+            <div class="jam">
+                <div class="kotak">
+                    <p id="jam"></p>
+                </div>
+                <div class="kotak">
+                    <p id="menit"></p>
+                </div>
+                <div class="kotak">
+                    <p id="detik"></p>
+                </div>
+            </div>
+
+            <h3 class="pembuka">Start your day with Pray and Read Al-Quran</h3>
+            <p class="ayat">"Remember Me; I will remember you. And thank Me, and never be ungrateful."<br><span>(QS Al-Baqarah: 152)</span></p>
+        </div>
+
+        <div class="kanan">
+            <img src="Image/Group 13.png" alt="" onclick="alert()">
+            <!-- <button>Credits</button> -->
+        </div>
+    </section>
+
+    <section id="jadwal-shalat">
+        <h1 class="title">Prayer Schedule</h1>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <p>Kota/Lokasi <br><strong id="city"></strong></p>
+                    <p>Provinsi/Daerah <br> <strong id="prov"></strong></p>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Imsak</th>
+                                    <th>Subuh</th>
+                                    <th>Terbit</th>
+                                    <th>Dhuha</th>
+                                    <th>Dzuhur</th>
+                                    <th>Ashar</th>
+                                    <th>Maghrib</th>
+                                    <th>Isya</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list-jadwal">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="script2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

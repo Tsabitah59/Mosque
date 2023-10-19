@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Potta+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+    text-decoration: none;
+
+}
+
+body{
+    overflow-x: hidden;
+}
+
+section{
+    min-height: 100vh;
+}
+
+a{
+    color: #645CBB;
+}
+
+/* Header */
+header{
+    width: 100%;
+    background: #8D6ECF;
+    height: 70px;
+    box-shadow: 0px 4px 17px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    z-index: 38498932898191771;
+    position: fixed;
+}
+
+header nav a{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: .3s ease;
+}
+
+header nav a:hover{
+    background: #A386E2;
+    /* color: #645CBB; */
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+.images{
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.images .logo{
+    height: 52px;
+}
+
+.images .brand{
+    color: #FFF;
+    font-family: 'Potta One';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-items: flex-start;
+}
+
+.head-kiri{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menuIcon{
+    font-size: 25px;
+    color: #fff;
+    display: none;
+}
+
+/* Home */
+#landing{
+    padding: 150px 100px 100px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 30px; */
+}
+
+.kiri{
+    width: 500px;
+}
+
+.kiri .jam{
+    display: flex;
+    gap: 10px;
+    font-size: 30px;
+    font-weight:600;
+    background: #BFACE2;
+    color: #fff;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#tanggal{
+    padding-left: 30px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.pembuka{
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #4c2e70;
+}
+
+.ayat{
+    margin-top: 10px;
+}
+
+.ayat span{
+    line-height: 174%;
+}
+
+.kanan img{
+    width: 480px;
+    align-items: flex-end;
+    /* position: relative; */
+    z-index: 1;
+}
+
+/* .kanan button{
+    padding: 5px 10px;
+    background: #A386E2;
+    border-radius: 20px;
+    font-size: 20px; */
+    /* position: absolute; */
+    /* color: #fff;
+    z-index: 5;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+} */ 
+
+/* Asmaul Husna & Alquran */
+#asmaul-husna, #surah-quran{
+    padding-top: 100px;
+}
+
+.title{
+    text-align: center;
+    font-size: 50px;
+    color: #645CBB;
+}
+
+.nama-judul{
+    color: #4c2e70;
+}
+
+.div-asma, .div-quran{
+    width: 300px;
+    height: 180px;
+    background: #fff;
+    display: block;
+    align-items: center;
+    border: 3px solid #BFACE2;
+    text-align: center;
+    border-radius: 20px;
+    transition: .3s ease-out;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.div-quran{
+    padding-top: 45px;
+}
+
+.div-asma{
+    height: 150px;
+    padding-top: 45px;
+}
+
+.div-quran:hover, .div-asma:hover{
+    background: #BFACE2;
+    box-shadow: 0px 12px 0px 0px #fce1f8;
+    transform: scale(1.05) translateY(-12px);
+    /* padding-top: 48.75px; */
+    .nama-judul, .keterangan-arti{
+        color: #fff;
+    }
+}
+
+#asmaaa, #surah{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,0fr);
+    margin: 30px 50px;
+    gap: 30px;
+}
+
+/* Jadwal Shalat */
+#jadwal-shalat{
+    margin: 10px 30px;
+}
+
+.container{
+    margin-top: 20px;
+}
+
+.card-header{
+    width: 800px;
+    height: 100px;
+    border-radius: 30px;
+    background: url(Image/pink-gradient-spring-landscape_23-2148448599.jpg), lightgray 50% / cover no-repeat;;
+    color: white;
+    /* padding-top: 45px; */
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.card-header p{
+    /* padding-left: 55px; */
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 189%;
+}
+
+.table-primary th{
+    background: #BFACE2;
+    color: white;
+    /* border: 1px solid #ffffff; */
+}
+
+.card-body{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-responsive{
+    border-radius: 10px;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td{
+    /* border: 1px solid #645CBB; */
+    text-align: center;
+    padding: 8px;
+}
+
+.table-primary td{
+    background: #e1d3fe;
+    font-weight: 600;
+    color: #4c2e70;
+    box-shadow: 0 2px 0px rgba(0, 0, 0, 0.10);
+    z-index: 5;
+}
+
+tr:nth-child(even){
+    background: #fce1f8;
+}
+
+.table tr{
+    position: sticky;
+}
+
+/* Home-nya Kawan */
+
+
+
+/* Responsive  */
+@media (max-width:912px) {
+    html{
+        font-size: 80%;
+    }
+
+    header{
+        height: 50px;
+    }
+
+    .images .logo{ 
+        width: 37.999px;
+        height: 36.505px;
+        flex-shrink: 0;
+    }
+
+    .images .brand{
+        font-size: 22.465px;
+    }
+
+    .card-header{
+        width: 70%;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    #landing{
+        gap: 28px;
+        padding: 75px;
+    }
+
+    .kiri .pembuka{
+        font-size: 300%;
+    }
+
+    .kanan img{
+        width: 320px;
+    }
+
+
+    .div-asma, .div-quran{
+        width: 250px;
+        height: 150px;
+    }
+
+    .div-quran:hover, .div-asma:hover{
+        padding-top: 43px;
+    }
+
+    .div-quran{
+        padding-top: 40px;
+    }
+}
+
+@media (max-width:768px){
+    #landing{
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .kiri #tanggal{
+        padding: 0;
+    }
+
+    .jam{
+        /* justify-content: center;
+        text-align: center; */
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 20px;
+    }
+
+    #asmaaa, #surah{
+        gap: 18px;
+    }  
+    
+    .div-asma, .div-quran{
+        width: 234px;
+        height: 141px;
+    }
+}
+
+@media (max-width:618px) {
+    #menuIcon{
+        display: block;
+        margin-right: 30px;
+    }
+    
+    .navbar{
+        position: absolute;
+        top: 100%;
+        /* left: 0; */
+        padding: 10px;
+        background: #A386E2;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+        display: none;
+        border-radius: 0 0 0 10px;
+        right: 0;
+    }
+    
+    .active{
+        display: block;
+    } 
+    
+    /* dropdown */
+    .navbar a{
+        display: block;
+        font-size: 18px;
+        margin: 10px;
+        text-align: right;
+    }
+
+    
+    .head-kiri{
+        width: 100%;
+    }
+
+    /* html{
+        font-size: 60%;
+    } */
+
+    .div-asma, .div-quran{
+        width: 225px;
+        height: 135px;
+    }
+
+    .kiri{
+        width: 410px;
+    }
+
+    #tanggal{
+        font-size: 17px;
+    }
+
+    .kiri .jam{
+        font-size: 27px;
+        border-radius: 15px;
+
+        /* width: ; */
+    }
+
+    .pembuka{
+        font-size: 25px;
+    }
+
+    .title{
+        font-size: 40px;
+    }
+
+    #asmaaa, #surah{
+        grid-template-columns: repeat(2,0fr);
+    }
+
+
+    .card-header{
+        height: 80px;
+    }
+
+    .card-header p{
+        font-size: 16.799px;
+    }
+
+    .div-quran:hover, .div-asma:hover{
+        padding-top: 40px;
+    }
+
+    
+    .table th, .table td{
+        font-size: 90%;
+    }
+
+}
+
+@media (max-width:450px) {
+    #jadwal-shalat{
+        margin: 30px 5px;
+    }
+
+    .card-header p{
+        font-size: 15px;
+    }
+
+    #asmaaa, #surah{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+
+    .div-asma, .div-quran{
+        width: 187px;
+        height: 112;
+    }
+
+    .div-asma{
+        padding-top: 40px;
+    }
+
+    .div-quran{
+        padding-top: 35px;
+    }
+
+    .div-quran:hover{
+        padding-top: 35px;
+    }
+
+    .table th, .table td{
+        font-size: 80%;
+        padding: 5px;
+    }
+}

@@ -1,0 +1,33 @@
+function getData() {
+    var suratAlquran = new XMLHttpRequest();
+    suratAlquran.open(
+        "GET",
+        quranApi,
+        true
+    );
+
+    suratAlquran.onreadystatechange = function() {
+        if(suratAlquran.readyState === 4 && suratAlquran.status === 200) {
+            var suratResponse = JSON.parse(suratAlquran.responseText);
+            displayData(suratResponse);
+        }
+    }
+    suratAlquran.send();
+}
+
+function getQuranData() {
+    fetch("https://api.banghasan.com/quran/format/json/surat",)
+    .then(function(quranResponse) {
+        if(!quranResponse.ok) {
+            throw new Error("Gagal mengambil data");
+        }
+        return quranResponse.json()
+    })
+    .then(function(quranData) {
+        displayData(quranData);
+        // console.log(data);
+    })
+    .catch(function(error) {
+        console.log("Terjadi kesalahan", error);
+    })
+}
